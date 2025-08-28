@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* ---------- Base Layout ---------- */
+.form-section {
+  @apply border-b border-white/10 pb-12;
+}
+.section-title {
+  @apply text-base/7 font-semibold text-white;
+}
+.section-description {
+  @apply mt-1 text-sm/6 text-gray-400;
+}
+
+/* ---------- Input Fields ---------- */
+.input-wrapper {
+  @apply mt-2;
+}
+.input-label {
+  @apply block text-sm/6 font-medium text-white;
+}
+.input-field {
+  @apply block w-full rounded-4xl bg-white/5 px-3 py-1.5 text-base text-white 
+         outline-1 -outline-offset-1 outline-white/10 
+         placeholder:text-gray-500 
+         focus:outline-2 
+         focus:-outline-offset-2 
+         focus:outline-indigo-500 
+         sm:text-sm/6;
+}
+
+/* Username specific */
+.username-container {
+  @apply flex items-center rounded-md bg-white/5 pl-3 outline-1 -outline-offset-1 outline-white/10 
+         focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-500;
+}
+.username-prefix {
+  @apply shrink-0 text-base text-gray-400 select-none sm:text-sm/6;
+}
+.username-input {
+  @apply block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base text-white 
+         placeholder:text-gray-500 focus:outline-none sm:text-sm/6;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  @apply rounded-md px-3 py-2 text-sm font-semibold;
+}
+.btn-primary {
+  @apply bg-indigo-500 text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
+}
+.btn-secondary {
+  @apply text-white;
+}
+.btn-upload {
+  @apply rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white 
+         inset-ring inset-ring-white/5 hover:bg-white/20;
+}
+
+/* ---------- File Upload ---------- */
+.file-upload-area {
+  @apply mt-2 flex justify-center rounded-lg border border-dashed border-white/25 px-6 py-10;
+}
+.file-upload-label {
+  @apply relative cursor-pointer rounded-md bg-transparent font-semibold text-indigo-400 
+         focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-indigo-500 
+         hover:text-indigo-300;
+}
+.file-upload-text {
+  @apply text-xs/5 text-gray-400;
+}
+
+/* ---------- Select Dropdown ---------- */
+.select-wrapper {
+  @apply mt-2 grid grid-cols-1;
+}
+.select-field {
+  @apply col-start-1 row-start-1 w-full appearance-none rounded-md bg-white/5 py-1.5 pr-8 pl-3 
+         text-base text-white outline-1 -outline-offset-1 outline-white/10 *:bg-gray-800 
+         focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6;
+}
+.select-icon {
+  @apply pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-400 sm:size-4;
+}

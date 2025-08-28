@@ -1,0 +1,9 @@
+@import "tailwindcss";
+:root {
+  --font-sans: 'Inter', sans-serif;
+}
+
+.tagify__input input {
+  color: white;
+  background-color: black;
+}
