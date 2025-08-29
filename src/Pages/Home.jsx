@@ -1,4 +1,5 @@
 import LayoutWrapper from "../components/layoutwrapper";
+import {ArrowRightIcon} from "@heroicons/react/24/outline"
 
 function Home() {
   return (
@@ -43,9 +44,9 @@ function Home() {
       <section className="mt-16 text-center">
         <a
           href="/login"
-          className="inline-block bg-sky-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-sky-500 transition"
+          className="inline-flex items-center gap-2 bg-sky-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-sky-500 transition"
         >
-          🚀 Get Started
+        Get Started Now <ArrowRightIcon className="w-5 h-5" />
         </a>
       </section>
     </LayoutWrapper>

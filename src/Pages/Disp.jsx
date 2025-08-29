@@ -81,7 +81,7 @@ function Disp() {
             <input
               name="search"
               type="text"
-              placeholder="Search with tags..."
+              placeholder="Search using title"
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSearch()}
@@ -95,7 +95,7 @@ function Disp() {
 
           {/* Filter */}
           <div className="flex items-center">
-            <span className="text-white mr-2">Filter:</span>
+            <span className="text-white mr-2">Filter by tags:</span>
             <select
               name="filter"
               onChange={handleFilter}

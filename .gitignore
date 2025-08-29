@@ -12,10 +12,7 @@ dist
 dist-ssr
 *.local
 
-<<<<<<< HEAD
 # Environment variables
-=======
->>>>>>> eeafe60394a020960108316f9c4d1bf5b456f5f8
 .env
 
 # Editor directories and files

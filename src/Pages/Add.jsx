@@ -15,14 +15,14 @@ function Add(){
     const languages = [
         { id: 1, name: 'Plain Text', value: 'text' },
         { id: 2, name: 'JavaScript', value: 'javascript' },
-        { id: 3, name: 'TypeScript', value: 'typescript' },
+        { id: 3, name: 'Html', value: 'html' },
         { id: 4, name: 'Python', value: 'python' },
         { id: 5, name: 'Java', value: 'java' },
         { id: 6, name: 'C++', value: 'cpp' },
         { id: 7, name: 'C#', value: 'csharp' },
         { id: 8, name: 'Go', value: 'go' },
         { id: 9, name: 'Rust', value: 'rust' },
-        { id: 10, name: 'HTML', value: 'html' },
+        { id: 10, name: 'TypeScript', value: 'typescript' },
         { id: 11, name: 'CSS', value: 'css' },
         { id: 12, name: 'JSON', value: 'json' },
         { id: 13, name: 'Markdown', value: 'markdown' },
@@ -80,6 +80,11 @@ function Add(){
 
     const handleSubmit= async (e)=>{
         e.preventDefault();
+
+        if(formdata.title=="")
+        {
+          return alert("Please enter a title")
+        }
         
         const base64files=await Promise.all(formdata.file.map(async file=>{
             const name= file.name; 
@@ -135,14 +140,14 @@ function Add(){
         {/* Title */}
         <div className="flex flex-col space-y-2">
           <label htmlFor="title" className="text-sm font-medium text-gray-200 dark:text-gray-100">
-            Enter Title
+            Enter Title<span className="text-red-500">*</span>
           </label>
           <input
             type="text"
             name="title"
             value={formdata.title}
             onChange={handleChange}
-            placeholder="Enter title"
+            placeholder="Enter title for the snippet"
             className="rounded-md bg-[#1f2937] dark:bg-[#111827] px-3 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0a36af]"
           />
         </div>
@@ -178,7 +183,7 @@ function Add(){
                     </span>
 
                     {selected.value === lang.value && (
-                      <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-[#0a36af]">
+                      <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-[#d3d3d3]">
                         <CheckIcon className="h-5 w-5" aria-hidden="true" />
                       </span>
                     )}
@@ -270,6 +275,7 @@ function Add(){
             placeholder="Add tags..."
             onChange={(newTags) => setformData((prev) => ({ ...prev, tags: newTags || [] }))}
           />
+          <span className="text-sm font-small font-extralight text-gray-200 dark:text-gray-100 p-2">Add multiple tags by typing and pressing enter </span>
         </div>
 
         {/* Submit Button */}
